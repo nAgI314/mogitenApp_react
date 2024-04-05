@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/mogitenApp_react/static/js/main.dae5d871.js",
+    "main.js": "/mogitenApp_react/static/js/main.bbc51a2d.js",
     "index.html": "/mogitenApp_react/index.html",
-    "main.dae5d871.js.map": "/mogitenApp_react/static/js/main.dae5d871.js.map"
+    "main.bbc51a2d.js.map": "/mogitenApp_react/static/js/main.bbc51a2d.js.map"
   },
   "entrypoints": [
-    "static/js/main.dae5d871.js"
+    "static/js/main.bbc51a2d.js"
   ]
 }
