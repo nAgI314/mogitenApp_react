@@ -1,8 +1,9 @@
 {
+  "homepage": "https://nAgI314.github.io/mogitenApp_react",
   "name": "qr-reader-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://murasuke.github.io/qr-reader-react/",
+ 
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -22,12 +23,12 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "deploy": "rm -rf docs && npm run build && mv build docs",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
+   
   },
   "eslintConfig": {
     "extends": [
