@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/qr-reader-react/static/js/main.8a59e4ba.js",
-    "index.html": "/qr-reader-react/index.html",
-    "main.8a59e4ba.js.map": "/qr-reader-react/static/js/main.8a59e4ba.js.map"
+    "main.js": "/mogitenApp_react/static/js/main.dae5d871.js",
+    "index.html": "/mogitenApp_react/index.html",
+    "main.dae5d871.js.map": "/mogitenApp_react/static/js/main.dae5d871.js.map"
   },
   "entrypoints": [
-    "static/js/main.8a59e4ba.js"
+    "static/js/main.dae5d871.js"
   ]
 }
