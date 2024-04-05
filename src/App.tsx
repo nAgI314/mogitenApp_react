@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import QRReader, { QRCode } from './QRReader';
 import {CreateCal} from './showCal';
 
+import Button from '@mui/material/Button';
+import { BottomNavigation, BottomNavigationAction, IconButton } from '@mui/material';
+import { Calculate, Clear } from '@mui/icons-material';
+import { Paper} from '@mui/material';
 //表の表示
 let products = [
   { name: '商品1', quantity: 5 },
@@ -160,22 +164,24 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <QRReader {...qrParam} gecognizeCallback={onRecognizeCode} />
+    
+    <div className="App" >
+      <div>
+      <div><QRReader {...qrParam} gecognizeCallback={onRecognizeCode} /></div>
       <div>
         <label>
           <input type="radio" name="rdo" value="0" onChange={(e) => setStopOnRecognize(e.target.value === "0")} checked={stopOnRecognize} />認識時に自動停止
         </label>
         <label>
-          <input type="radio" name="rdo" value="1" onChange={(e) => setStopOnRecognize(e.target.value === "0")} checked={!stopOnRecognize} />認識時も処理継続
+          <input type="radio" name="rdo" value="1" onChange={(e) => setStopOnRecognize(e.target.value === "0")} checked={!stopOnRecognize} />認識時も処理継続　　　   
         </label>
         
-        <button onClick={toggleVideoStream}>{(qrParam.pause? '再開': '停止')}</button>
+        <Button variant="outlined" color="primary" sx={{ marginRight: 2 }} onClick={toggleVideoStream}>{(qrParam.pause? '再開': '停止')}</Button>
         <p>QRコード：{code}</p>  
         <p></p>
         <p>合計金額:{sum}</p>
       </div>
-      <button onClick={handleConfirm}>Open Confirmation Dialog</button>
+      <Button variant="outlined" onClick={handleConfirm}>Open Confirmation Dialog</Button>
       {showDialog && (
         <div
         style={{
@@ -197,8 +203,8 @@ function App() {
             
             onChange={(e) => setInputValue(parseInt(e.target.value)-sum)}
           />
-          <button onClick={handleCancel}>戻る</button>
-          <button onClick={handleConfirmInput}>Confirm</button>
+          <Button variant="outlined" onClick={handleCancel}>戻る</Button>
+          <Button variant="outlined" onClick={handleConfirmInput}>Confirm</Button>
           <p>合計金額:{sum}</p>
           <p> おつり:{inputValue}</p>
           <p></p>
@@ -209,7 +215,7 @@ function App() {
         </div>
       )}
       
-      <button onClick={handleCal}>電卓</button>
+      <Button variant="outlined" onClick={handleCal}>電卓</Button>
       {showCalculator && (
         <div
         style={{
@@ -225,12 +231,20 @@ function App() {
           }}
   
         className="custom-dialog">
-          <h1>電卓</h1>
-          <button onClick={deleteCal}>戻る</button>
+          <Paper sx={{fontSize: "50px", background:"#ffcfff" , position: 'relative', top: 0, left: 0, right: 0 }} elevation={3}>
+            電卓<IconButton sx={{float:"right",fontSize:"large"}}  onClick={deleteCal}><Clear /></IconButton> 
+          </Paper>
+          
           <CreateCal />
           
         </div>
       )}
+       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+      <BottomNavigation>
+        <BottomNavigationAction label ="電卓" icon={< Calculate/>} onClick={handleCal}/>
+      </BottomNavigation>
+      </Paper>
+      </div>
     </div>
   );
 }
